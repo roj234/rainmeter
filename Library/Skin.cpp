@@ -796,7 +796,7 @@ void Skin::ChangeSingleZPos(ZPOSITION zPos, bool all)
 
 void Skin::SetSkipUpdate(bool flag) {
 	KillTimer(m_Window, TIMER_METER);  // Kill timer temporarily
-    if (flag) {
+    if (!flag) {
         Update(false);
         if (m_WindowUpdate >= 0) {
             SetTimer(m_Window, TIMER_METER, m_WindowUpdate, nullptr);
@@ -822,7 +822,7 @@ void Skin::DoBang(Bang bang, const std::vector<std::wstring>& args)
 		break;
 
 	case Bang::Update:
-		SetSkipUpdate(true);
+		SetSkipUpdate(false);
 		break;
 
 	case Bang::ShowBlur:
