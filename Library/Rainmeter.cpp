@@ -1367,7 +1367,7 @@ bool Rainmeter::HasSkin(const Skin* skin) const
 void Rainmeter::SetSkipUpdate(bool flag) {
 	for (auto it = m_Skins.begin(); it != m_Skins.end(); ++it) {
 		Skin* skin = (*it).second;
-		skip->SetSkipUpdate(flag);
+		skin->SetSkipUpdate(flag);
 	}
 }
 
